@@ -21,7 +21,7 @@ export class TableComponent implements OnInit {
   ];
 
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'price', '24h%', 'market', 'volumen24h', 'circulation'];
   dataSource = this.ELEMENT_DATA;
 
 

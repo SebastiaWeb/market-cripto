@@ -1,7 +1,14 @@
 table {
+    background: white;
     width: 100%;
+    padding: 2%;
 }
 
 tr.example-element-row:not(.example-expanded-row):hover {
     background: whitesmoke;
+}
+
+td,
+th {
+    border-color: rgb(175, 173, 173);
 }
