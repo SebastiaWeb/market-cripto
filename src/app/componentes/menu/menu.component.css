@@ -1,0 +1,60 @@
+nav {
+    background: transparent;
+}
+
+.logo {
+    position: absolute;
+    width: 201px;
+    height: 33px;
+    left: calc(50% - 201px/2 - 454.5px);
+    top: calc(50% - 33px/2 + 2.69px);
+    background: #FCFCFC;
+    mix-blend-mode: multiply;
+}
+
+.logo>h1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    background: linear-gradient(#A800F6);
+    color: #0B0970;
+    line-height: 20px;
+    /* or 83% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px;
+    position: absolute;
+    width: 399px;
+    height: 20px;
+    right: 165px;
+    top: calc(50% - 20px/2 + 0.19px);
+}
+
+.items>li {
+    list-style: none;
+}
+
+.items>li>a {
+    text-decoration: none;
+    /* Label / Medium Label */
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    /* identical to box height, or 143% */
+    /* Text / Gray 900 */
+    color: #18191F;
+}

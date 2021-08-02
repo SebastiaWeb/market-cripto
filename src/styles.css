@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: rgba(71, 74, 87, 0.19);
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url('./assets/Manrope/Manrope-Regular.ttf') format('truetype'), url('./assets/Manrope/Manrope-Bold.ttf') format('truetype'), url('./assets/Manrope/Manrope-ExtraBold.ttf') format('truetype'), url('./assets/Manrope/Manrope-ExtraLight.ttf') format('truetype'), url('./assets/Manrope/Manrope-Light.ttf') format('truetype'), url('./assets/Manrope/Manrope-Medium.ttf') format('truetype'), url('./assets/Manrope/Manrope-SemiBold.ttf') format('truetype');
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

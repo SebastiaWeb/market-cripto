@@ -1,0 +1,16 @@
+.title {
+    /* Titulo */
+    color: #092933;
+    /* Heading / H1 */
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 98px;
+    /* or 136% */
+    text-align: center;
+    text-transform: uppercase;
+    font-feature-settings: 'liga' off;
+    color: #092933;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
