@@ -1,55 +1,123 @@
-<!-- <ng-template #Criptomonedas> -->
-<table mat-table #table1 [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+<div *ngIf="cripto_exchange; else exchange">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="market_cap_rank">
-        <th mat-header-cell *matHeaderCellDef [width]="15"> # </th>
-        <td mat-cell *matCellDef="let row"> {{row.market_cap_rank}}</td>
-    </ng-container>
+    <table mat-table #table1 [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef [width]="300"> Name </th>
-        <td mat-cell *matCellDef="let row"> <img src="{{row.image}}" [width]="25"> {{row.name}}</td>
-    </ng-container>
+        <!-- Position Column -->
+        <ng-container matColumnDef="market_cap_rank">
+            <th mat-header-cell *matHeaderCellDef [width]="15"> # </th>
+            <td mat-cell *matCellDef="let row"> {{row.market_cap_rank}}</td>
+        </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="current_price">
-        <th mat-header-cell *matHeaderCellDef [width]="100"> Price </th>
-        <td mat-cell *matCellDef="let row"> {{row.current_price}}</td>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef [width]="250"> Name </th>
+            <td mat-cell *matCellDef="let row"> <img src="{{row.image}}" [width]="25"> {{row.name}}</td>
+        </ng-container>
 
-    </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="current_price">
+            <th mat-header-cell *matHeaderCellDef [width]="90"> Price </th>
+            <td mat-cell *matCellDef="let row"> {{row.current_price | puntuacion}}</td>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="market_cap_change_percentage_24h">
-        <th mat-header-cell *matHeaderCellDef [width]="50"> 24h% </th>
-        <td mat-cell *matCellDef="let row"> {{row.market_cap_change_percentage_24h}}</td>
+        </ng-container>
 
-    </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="market_cap_change_percentage_24h">
+            <th mat-header-cell *matHeaderCellDef [width]="80"> 24h% </th>
+            <td mat-cell *matCellDef="let row"> {{row.market_cap_change_percentage_24h}}</td>
 
-    <ng-container matColumnDef="market_cap">
-        <th mat-header-cell *matHeaderCellDef [width]="100"> Market Cap </th>
-        <td mat-cell *matCellDef="let row"> {{row.market_cap}}</td>
+        </ng-container>
 
-    </ng-container>
-    <ng-container matColumnDef="total_volume">
-        <th mat-header-cell *matHeaderCellDef [width]="100"> Volumen </th>
-        <td mat-cell *matCellDef="let row"> {{row.total_volume}}</td>
+        <ng-container matColumnDef="market_cap">
+            <th mat-header-cell *matHeaderCellDef [width]="130"> Market Cap </th>
+            <td mat-cell *matCellDef="let row"> {{row.market_cap | puntuacion}}</td>
 
-    </ng-container>
+        </ng-container>
+        <ng-container matColumnDef="total_volume">
+            <th mat-header-cell *matHeaderCellDef [width]="120"> Volumen </th>
+            <td mat-cell *matCellDef="let row"> {{row.total_volume | puntuacion}}</td>
 
-    <ng-container matColumnDef="total_supply">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header [width]="100"> Circulating Supply </th>
-        <td mat-cell *matCellDef="let element"> {{element.total_supply}} </td>
+        </ng-container>
 
-    </ng-container>
+        <ng-container matColumnDef="total_supply">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header [width]="100"> Circulating Supply </th>
+            <td mat-cell *matCellDef="let element"> {{element.total_supply | puntuacion}} </td>
+
+        </ng-container>
 
 
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-<!-- <div *ngFor="let criptos of dataSource">{{criptos.id}}</div> -->
+</div>
 
-<!-- </ng-template> -->
+
+<!-- <ng-template #criptomonedas> -->
+
+
+<!-- <div *ngFor="let criptos of dataSource">{{criptos.id}}</div>  -->
+<!-- 
+</ng-template>  -->
+<ng-template #exchange>
+
+
+    <table mat-table #table2 [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="trust_score_rank">
+            <th mat-header-cell *matHeaderCellDef [width]="15"> # </th>
+            <td mat-cell *matCellDef="let row"> {{row.trust_score_rank}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef [width]="300"> Name </th>
+            <td mat-cell *matCellDef="let row"> <img src="{{row.image}}" [width]="25"> {{row.name}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="trust_score">
+            <th mat-header-cell *matHeaderCellDef [width]="100"> Score </th>
+            <td mat-cell *matCellDef="let row"> {{row.trust_score}}</td>
+
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="trade_volume_24h_btc">
+            <th mat-header-cell *matHeaderCellDef [width]="50"> Volumen btc </th>
+            <td mat-cell *matCellDef="let row"> {{row.trade_volume_24h_btc | puntuacion}}</td>
+
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef [width]="100"> Pais </th>
+            <td mat-cell *matCellDef="let row"> {{row.country}}</td>
+
+        </ng-container>
+        <ng-container matColumnDef="year_established">
+            <th mat-header-cell *matHeaderCellDef [width]="100"> Fundada </th>
+            <td mat-cell *matCellDef="let row"> {{row.year_established}}</td>
+
+        </ng-container>
+
+        <ng-container matColumnDef="url">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header [width]="100"> Ir </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon" class="button">
+                    <mat-icon><a href="{{element.url}}" class="link" target="_blank">open_in_new</a></mat-icon>
+                </button>
+            </td>
+
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- <div *ngFor="let criptos of dataSource">{{criptos.id}}</div>  -->
+
+</ng-template>

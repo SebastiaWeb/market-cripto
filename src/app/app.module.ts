@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatButtonModule} from '@angular/material/button'; 
+import {MatIconModule} from '@angular/material/icon'; 
+import { Puntuacion } from './pipes/puntuacion.pipe';
 
 import { routing, appRoutingProviders} from './routing.app';
 
@@ -24,7 +27,8 @@ import { TableComponent } from './componentes/table/table.component';
     ConvertirComponent,
     ContactoComponent,
     TableComponent,
-
+    Puntuacion
+    
   ],
   imports: [
     RouterModule,
@@ -32,7 +36,10 @@ import { TableComponent } from './componentes/table/table.component';
     MatTableModule,
     routing,
     HttpClientModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule,
+    MatIconModule,
+    
     
   ],
   exports:[ MatTableModule ],

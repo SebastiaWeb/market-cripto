@@ -12,3 +12,16 @@ td,
 th {
     border-color: rgb(175, 173, 173);
 }
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    color: brown;
+    animation: ease-in 500ms;
+}
+
+.link:focus {
+    color: yellow;
+}

@@ -9,6 +9,7 @@ export class CriptoService {
 
     public url: string = "https://api.coingecko.com/api/v3/";
     public coin: string = "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+    public exchange: string = "exchanges";
     public data:any;
 
     constructor(
@@ -25,34 +26,8 @@ export class CriptoService {
     }
 
 
-    public getData(): any {
-
-
-        this.getCoins().subscribe(
-            result => console.log(result)
-        );
-
-        console.log(this.data)
-
-        return this.data;
+    public getExchange(): any {
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        return this._http.get(this.url+this.exchange, {headers: headers});
     }
-
-    // public getCoins() {
-
-    //     let dato;
-
-    //     dato = fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-    //         .then(response => { response.json() })
-    //         .then(response => {
-    //             this.data = response;
-    //             console.log(this.data)
-
-    //         })
-    //         .catch(err => {
-    //             console.error(err);
-    //         });
-
-    //         console.log(dato)
-    //     return dato;
-    // }
 }
