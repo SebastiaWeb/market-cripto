@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { routing, appRoutingProviders} from './routing.app';
 
@@ -22,15 +24,18 @@ import { TableComponent } from './componentes/table/table.component';
     ConvertirComponent,
     ContactoComponent,
     TableComponent,
+
   ],
   imports: [
     RouterModule,
     BrowserModule,
     MatTableModule,
     routing,
+    HttpClientModule,
+    MatPaginatorModule
     
   ],
-
+  exports:[ MatTableModule ],
   providers: [
     appRoutingProviders
   ],
